@@ -6,6 +6,10 @@ import org.springframework.web.bind.MethodNotValidException;
 
 public class globalExceptionHandler{
     @ExceptionHandler(MethodNotValidException.class)
-    public ResponseEntity
+    public ResponseEntity<?>handleFieldError(MethodArgumentNotValidException ex){
+    Map<String,String>error=new HashMap<>();
+    ex.getBindingResult().getFieldsError().forEach( err->error.put(ex.getField(),ex.getDefaultMessage()))
+    return new ResponseEntity<>(error,HttpStatus.BAD_REQUEST)
+}
 
 }
