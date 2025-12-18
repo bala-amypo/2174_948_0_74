@@ -10,22 +10,22 @@ import org.springframework.web.bind.annotation.RestController;
 
 import jakarta.validation.Valid;
 
-import com.example.demo.entity.StudentEntity;
+import com.example.demo.entity.studentEntity;
 import com.example.demo.service.StudentService;
 
 @RestController
-public class StudentController {
+public class studentController {
 
     @Autowired
-    private StudentService service;
+    private studentService service;
 
     @GetMapping("/getAllStudent")
-    public List<StudentEntity> getAll() {
+    public List<studentEntity> getAll() {
         return service.getAll();
     }
 
     @PostMapping("/add")
-    public StudentEntity addStudent(@Valid @RequestBody StudentEntity student) {
+    public studentEntity addStudent(@Valid @RequestBody StudentEntity student) {
         return service.addStudent(student);
     }
 }
