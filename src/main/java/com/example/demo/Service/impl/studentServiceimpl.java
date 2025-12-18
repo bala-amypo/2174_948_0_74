@@ -26,4 +26,13 @@ public class studentServiceImpl implements studentService
     {
         return repo.save(student);
     }
+    @PutMapping("/update/{id}")
+       public studentEntity updateById(@PathVariable Long id, @Valid @RequestBody studentEntity newstu){
+            return service.updateById(id,newstu);
+       }
+
+    @Deletemapping("/aelete/{id}")
+        public String deleteByID(@Pathvariable Long id){
+              return service.deleteByID(id);
+        }
 }
