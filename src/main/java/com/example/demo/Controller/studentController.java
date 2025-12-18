@@ -25,5 +25,6 @@ public class studentController
     {
         return service.addStudent(student);
     }
+    #GetMapping("/get/{id}
 
 }
